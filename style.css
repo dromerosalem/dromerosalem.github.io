@@ -1,0 +1,176 @@
+body{
+  background-color: black;
+  color: aliceblue;
+  font-family: 'Inconsolata', monospace;
+  /* display: flex; */
+}
+
+.bar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  background-color:#696969;;
+  height: 50px;
+  }
+
+li{
+  font-style: none;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+/* img.profile{
+  height: 30%;
+  width: auto;  
+} */
+.primero{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+
+}
+
+.first{
+  display: flex;
+  flex-direction: row;
+  /* align-content: flex-end; */
+}
+
+   .skills{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    /* justify-content: flex-end; */
+  } 
+
+  /* .habilidades{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  } */
+
+  progress{
+  -webkit-appearance: none;
+   appearance: none;
+   background-color: #eee;
+   border-radius: 2px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+article{
+  align-self: center;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 500px;
+  
+
+}
+
+hr{
+  border-top: 1px solid aliceblue;
+}
+
+a{
+  text-decoration-style: none;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+#contacts{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.experience{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  overflow: auto;
+  margin-top: 50px;
+  
+}
+
+ #experience{
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: large; 
+} 
+
+#about{
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: large;
+}
+
+#skills{
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: large;
+}
+.contact{
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: large;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+strong{
+  font-weight: bold;
+}
+
+h1{
+  font-size: xx-large;
+  margin-top: 20px;
+  font-weight: bold;
+
+}
+
+.jr{
+  font-size: medium;
+  margin-top: 10px;
+
+}
+
+.sk{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+i{
+  margin-top: 4px;
+  margin-bottom: 4px;
+
+}
+
+h3{
+  font-size: large;
+  font-weight: bold;
+  margin: 10px;
+}
+
+h2{
+  font-size: medium;
+  margin: 10px;
+}
+
+li:hover{
+  transform: scale(1.5);
+}
