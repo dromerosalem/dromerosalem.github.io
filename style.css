@@ -91,7 +91,7 @@ a{
 .experience{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   height: 400px;
   overflow: auto;
   margin-top: 50px;
