@@ -101,19 +101,20 @@ a{
  #experience{
   text-align: center;
   margin-top: 30px;
-  font-weight: bold;
+  font-family: 'Russo One', sans-serif;
   font-size: large; 
 } 
 
 #about{
   margin-top: 30px;
-  font-weight: bold;
   font-size: large;
+  font-family: 'Russo One', sans-serif;
+
 }
 
 #skills{
   margin-top: 30px;
-  font-weight: bold;
+  font-family: 'Russo One', sans-serif;
   font-size: large;
 }
 .contact{
@@ -135,7 +136,9 @@ strong{
 h1{
   font-size: xx-large;
   margin-top: 20px;
-  font-weight: bold;
+  
+  font-family: 'Russo One', sans-serif;
+
 
 }
 
@@ -157,7 +160,6 @@ h1{
 i{
   margin-top: 4px;
   margin-bottom: 4px;
-
 }
 
 h3{
