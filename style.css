@@ -93,7 +93,8 @@ a{
   flex-direction: column;
   justify-content: flex-start;
   height: 400px;
-  overflow: auto;
+  overflow-y: auto;
+  white-space: nowrap;
   margin-top: 50px;
   
 }
