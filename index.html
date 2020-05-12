@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./slick-theme.css"/>
   <script src="https://kit.fontawesome.com/ee0292ed56.js" crossorigin="anonymous"></script>
   
   
@@ -21,12 +23,12 @@
   <header>
     <nav>
       <ul class="bar">
-        <li> <a href="#about">ABOUT</a></li>
-        <li> <a href="#experience">EXPERIENCE</a></li>
-        <li> <a href="#skills">SKILLS</a> </li>
-        <li> <a href="#education">EDUCATION</a></li>
-        <li> <a href="#projects">PROJECTS</a></li>
-        <li> <a href="#contacts">CONTACTS</a></li>
+        <li class="navbar"> <a href="#about">ABOUT</a></li>
+        <!-- <li> <a href="#experience">EXPERIENCE</a></li>
+        <li> <a href="#skills">SKILLS</a> </li> -->
+        <!-- <li> <a href="#education">EDUCATION</a></li> -->
+        <li class="navbar"> <a href="#projects">PROJECTS</a></li>
+        <li class="navbar"> <a href="#contacts">CONTACTS</a></li>
       </ul>
     </nav>
   </header>
@@ -34,47 +36,208 @@
   <main>
     <div class="first">
       <div class="profile">
-        <h1>DAVID ROMERO SALEM</h1>
+        <h1 class="name">DAVID</h1>
+        <h1 class="name">ROMERO</h1>
+        <h1 class="name">SALEM</h1>
         <p class="jr">Junior Software Developer</p>
-        <img src="https://i.ibb.co/qmBNhd4/profilepic.jpg" alt="profile pic">
+        <!-- <img class="profilepic"src="Assets/daro.jpg" alt=""> -->
+        <!-- <img src="https://i.ibb.co/qmBNhd4/profilepic.jpg" alt="profile pic"> -->
       </div>
     <section class="primero">
       <div class="about">
-      <h4 id="about">ABOUT</h4><br>
-      <p>My couriosity to discover the 'WHY' lead me to have a really wide expereince in differtent fields.</p> <br>
-        <p><strong>Graduated of Bioscience</strong> I was always curious about to know how our DNA works. I had the chance to work in different clinical laboratories and chemical laboratories starting as an laboratory assistant to end up leading full teams in a medical center</p><br>
-        <p><strong>Experience in Finance and Banking</strong>, I wanted to know how the money flows around the society and the direct impact that has into my relatives and me. I started to work as a representative of a finacial institution to end up writing internal complaince full procedures for my department for well known investemnt bank</p> <br>
-        <p>But something that was following me since my youngest days and never left is the <strong>Fasination for Technologies</strong>  in
-        computers the cuirosity always lead me to be that friend that everyone has that fix your computer when something
-        goes wrong, and not beacuse I knew how to fix it but because the solution always is out there on internet
+      <h3 id="about">ABOUT</h3><br>
+      <p class="brand">My curiosity to discover the 'WHY' lead me to have a   wide experience in different fields.</p> <br>
+        <p class="brand">Graduated of Bioscience I was always curious about to know how our DNA works. I had the chance to work in different clinical laboratories and chemical laboratories starting as laboratory assistant to end up leading full teams in a medical centre</p><br>
+        <p class="brand">Experience in Finance and Banking, I wanted to know how the money flows around the society and the direct impact that has into my relatives and me. I started to work as a representative of a financial institution to end up writing internal compliance full procedures for my department for well known investment bank</p> <br>
+        <p class="brand">But something that was following me since my youngest days and never left is the Fascination for Technologies in
+        computers the curiosity always lead me to be that friend that everyone has that fix your computer when something
+        goes wrong, and not because I knew how to fix it but because the solution always is out there on internet
         waiting for you to help you, so I just google it!.</p> <br>
-        <p><strong>I deceided to make my facination a profession.</strong></p>
+        <p class="brand">I decided to make my fascination a profession.</p>
+      </div>
+    </section>
+    
+  </div>
+  <h3 id="skills">SKILLS</h3>
+    <section class="skills">
+      <ul class="habilidades">
+        <li class="sk"><i class="devicon-react-original"></i>REACT</li>
+        <li class="sk"><i class="devicon-javascript-plain"></i>JavaScript</li>
+        <li class="sk"><i class="devicon-django-line"></i>DJANGO</li>
+        <li class="sk"><i class="devicon-python-plain"></i>Python</li> 
+        <li class="sk"><i class="devicon-postgresql-plain-wordmark"></i>PostgreSQL</li>
+        <li class="sk"><i class="devicon-mongodb-plain"></i>MongoDB</li>
+      </ul>
+      <ul class="habilidades2">
+        <li class="sk"><i class="devicon-express-original"></i>express</li>
+        <li class="sk"><i class="devicon-babel-plain"></i>BABEL</li>
+        <li class="sk"><i class="devicon-nodejs-plain"></i>NODE.js</li>
+        <li class="sk"><i class="devicon-webpack-plain"></i>WEBPACK</li>
+        <li class="sk"><i class="devicon-heroku-original"></i>HEROKU</li>
+        <li class="sk"><i class="devicon-sass-original"></i>SASS</li>
+        
+        
+      </ul>
+      <ul class="habilidades3">
+        <li class="sk"><i class="devicon-git-plain"></i>GIT</li>
+        <li class="sk"><i class="devicon-visualstudio-plain"></i>VS CODE</li>
+        <li class="sk"><i class="devicon-github-plain"></i>GitHub</li>
+        <li class="sk"><i class="devicon-html5-plain-wordmark"></i>HTML</li>
+        <li class="sk"><i class="devicon-css3-plain-wordmark"></i>CSS</li>
+        <li class="sk"><i class="fab fa-npm"></i></i>NPM</li>
+        
+      </ul>
+    </section>
+    <h3 id="projects">PROJECTS</h3>
+    <section class="for_slick_slider single-item">
+      <div class="items" >
+        <div class="description">
+          <h1>SPACE - Z</h1>
+        <div class="desc">
+          
+          <h6>Description:</h6>
+          </br>
+          <p>Based on the space invaders original game, this project was built with JavaScript, CSS and HTML.</p>
+          <p>This game was later adapted by a blogger with my permission, and went viral in Mexico. <a href="https://coronagame.net/" target="_blank">coronagame.net</a></p>
+        </br>
+          <h4> <span>You can play the game</span>  <a href="https://dromerosalem.github.io/project-1/" target="_blank">HERE</a></h4>
+          </br>
+          <h4><span>On GitHub</span> <a href="https://github.com/dromerosalem/project-1"><i class="devicon-github-plain"></i></a></h4>
+        </div>
+
+        </br>
+        <div class="tech">
+          <h5>Tech Used:</h5>
+        </br>
+          <ul>
+            <li class="techUsed"><i class="devicon-javascript-plain"></i> JavaScript (ES6)</li>
+            <li class="techUsed"><i class="devicon-github-plain"></i> GitHub</li>
+            <li class="techUsed"><i class="devicon-git-plain"></i> Git</li>
+            <li class="techUsed"><i class="devicon-html5-plain-wordmark"></i> HTML5</li>
+            <li class="techUsed"><i class="devicon-css3-plain-wordmark"></i> CSS3</li>  
+          </ul>
+        </div>
+      
+        </div>
+        <div class="images">
+        <img class="project-pic" src="./Assets/space-z.png" alt="project-1">
+        <img class="project-pic" src="./Assets/victory.png" alt="project-1">
+        <img class="project-pic" src="./Assets/gameOver.png" alt="project-1">
+        </div>
+      </div>
+      <div class="items" >
+        <div class="description">
+          <h1>SPACE - X </h1>
+        <div class="desc">
+          
+          <h6>Description:</h6>
+          </br>
+          <p>A space rocket flight tracker with the Space-X API's, which updates with new flights and stores past flights.</p>
+          <p>This project was developed using REACT.js with different functionalities such as getting detailed information</p>
+          <p>for each launch.</p>
+        </br>
+          <h4><span>You can launch the site</span><a href="https://dromerosalem.github.io/project-2/" target="_blank"> HERE</a></h4>
+          </br>
+          <h4><span>On GitHub</span> <a href="https://github.com/dromerosalem/project-2" target="_blank"><i class="devicon-github-plain"></i></a></h4>
+        </div>
+
+        </br>
+        <div class="tech">
+          <h5>Tech Used:</h5>
+        </br>
+          <ul>
+            <li class="techUsed"><i class="devicon-react-original"></i></i> REACT</li>
+            <li class="techUsed"><i class="devicon-webpack-plain"></i> WEBPACK</li>
+            <li class="techUsed"><i class="devicon-javascript-plain"></i> JavaScript (ES6)</li>
+            <li class="techUsed"><i class="devicon-git-plain"></i> Git</li>
+            <li class="techUsed"><i class="devicon-sass-original"></i> SASS</li>  
+          </ul>
+        </div>
+      
+        </div>
+        <div class="images">
+        <img class="project-pic" src="./Assets/space-x.png" alt="project-1">
+        <img class="project-pic" src="./Assets/past.png" alt="project-1">
+        <img class="project-pic" src="./Assets/singleLaunch.png" alt="project-1">
+        </div>
+      </div>
+      <div class="items" >
+        <div class="description">
+          <h1>TRIVIA GAME </h1>
+        <div class="desc">
+          
+          <h6>Description:</h6>
+          </br>
+          <p>A trivia game with an approach for mobile first where we were using React, Express and Mongo for the back end,</p>
+          <p>fed by a free API for the quiz questions and creating a Login and Registration page to keep the records and</p>
+          <p> scores of the users.</p>
+        </br>
+          <h4><span>You can launch the site</span><a href="https://project-3-trivia.herokuapp.com/comment" target="_blank"> HERE</a></h4>
+          </br>
+          <h4><span>On GitHub</span> <a href="https://github.com/dromerosalem/project-3" target="_blank"><i class="devicon-github-plain"></i></a></h4>
+        </div>
+
+        </br>
+        <div class="tech">
+          <h5>Tech Used:</h5>
+        </br>
+          <ul>
+            <li class="techUsed"><i class="devicon-react-original"></i></i> REACT</li>
+            <li class="techUsed"><i class="devicon-mongodb-plain"></i> MongoDB</li>
+            <li class="techUsed"><i class="devicon-express-original"></i> EXPRESS</li>
+            <li class="techUsed"><i class="devicon-git-plain"></i> Git</li>
+            <li class="techUsed"><i class="devicon-heroku-original"></i> HEROKU</li>  
+          </ul>
+        </div>
+      
+        </div>
+        <div class="images">
+        <img class="project-pic" src="./Assets/trivia1.png" alt="project-1">
+        <img class="project-pic" src="./Assets/trivia2.png" alt="project-1">
+        <img class="project-pic" src="./Assets/trivia3.png" alt="project-1">
+        </div>
       </div>
 
-      <h4 id="skills">SKILLS</h4>
-        <section class="skills">
-          <ul class="habilidades">
-            <li class="sk"><i class="devicon-html5-plain-wordmark"></i>HTML<progress min="0" max="100" value="80"></progress></li>
-            <li class="sk"><i class="devicon-css3-plain-wordmark"></i>CSS<progress min="0" max="100" value="65"></progress></li>
-            <li class="sk"><i class="devicon-javascript-plain"></i>JavaScript<progress min="0" max="100" value="50"></progress></li>
-            <li class="sk"><i class="devicon-postgresql-plain-wordmark"></i>SQL<progress min="0" max="100" value="50"></progress><span></li>
-          </ul>
-          <ul class="habilidades2">
-            <li class="sk"><i class="devicon-linux-plain"></i>LINUX<progress min="0" max="100" value="90"></progress></li>
-            <li class="sk"><i class="devicon-windows8-original"></i>WINDOWS<progress min="0" max="100" value="90"></progress></li>
-            <li class="sk"><i class="devicon-apple-original"></i>MAC<progress min="0" max="100" value="90"></progress></li>
-            <li class="sk"><i class="devicon-chrome-plain"></i>CHROME<progress min="0" max="100" value="90"></progress><span></li>
-          </ul>
-          <ul class="habilidades3">
-            <li class="sk"><i class="devicon-git-plain"></i>GIT<progress min="0" max="100" value="50"></progress></li>
-            <li class="sk"><i class="devicon-visualstudio-plain"></i>VS CODE<progress min="0" max="100" value="80"></progress></li>
-            <li class="sk"><i class="devicon-github-plain"></i>GitHub<progress min="0" max="100" value="80"></progress></li>
-            <li class="sk"><i class="far fa-file-excel"></i>EXCEL<progress min="0" max="100" value="70"></progress><span></li>
-          </ul>
-        </section>
 
+      <div class="items" >
+        <div class="description">
+          <h1>LABS </h1>
+        <div class="desc">
+          
+          <h6>Description:</h6>
+          </br>
+          <p>An appointment booking platform built for ALSALEM, an actual business in the healthcare industry.</p> 
+           <p>By using Django for back end and React Hooks for front end, where the users are able to book</p>
+          <p> medical appointments and review the list of the exams' prices.<p>
+        </br>
+          <h4><span>You can launch the site</span><a href="https://labs-project4.herokuapp.com/#/" target="_blank"> HERE</a></h4>
+          </br>
+          <h4><span>On GitHub</span> <a href="https://github.com/dromerosalem/project-4" target="_blank"><i class="devicon-github-plain"></i></a></h4>
+        </div>
+
+        </br>
+        <div class="tech">
+          <h5>Tech Used:</h5>
+        </br>
+          <ul>
+            <li class="techUsed"><i class="devicon-react-original"></i></i> REACT</li>
+            <li class="techUsed"><i class="devicon-django-line"></i> Django</li>
+            <li class="techUsed"><i class="devicon-javascript-plain"></i> JavaScript</li>
+            <li class="techUsed"><i class="devicon-git-plain"></i> Git</li>
+            <li class="techUsed"><i class="devicon-webpack-plain"></i> WEBPACK</li>  
+          </ul>
+        </div>
+      
+        </div>
+        <div class="images">
+        <img class="project-pic" src="./Assets/labs.png" alt="project-1">
+        <img class="project-pic" src="./Assets/labs1.png" alt="project-1">
+        <img class="project-pic" src="./Assets/labs2.png" alt="project-1">
+        </div>
+      </div>
+    
+  
     </section>
-  </div>
     <h4 id="experience">EXPERIENCE</h4>
     <section class="experience">
       <article>
@@ -146,6 +309,8 @@
     </section>
 
   </main>
+  <h1 class="mobileView">MOBILE VIEW IN PROGRESS, PLEASE VISIT YOUR VISIT DESKTOP COMPUTER</h1>
+  <div class="loader"></div>
     <footer>
       <h4 class="contact">CONTACT ME</h4>
       <hr>
@@ -156,6 +321,12 @@
         
       </section>
     </footer>
+  <script type="text/javascript" src="./jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="./slick.min.js"></script>
+  <script src="./main.js"></script>
+
+
+
 </body>
 
 </html>
