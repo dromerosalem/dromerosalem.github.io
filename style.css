@@ -327,6 +327,9 @@ h2{
  .bar{
    display: none;
  }
+ .darkmode{
+   margin-top: -20%;
+ }
 
  .mobileView{
   display: block;
