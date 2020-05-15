@@ -9,9 +9,6 @@ body{
   /* display: flex; */
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 nav{
   position: fixed;
