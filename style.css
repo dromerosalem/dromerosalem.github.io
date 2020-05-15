@@ -5,6 +5,10 @@ body{
   /* display: flex; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 nav{
   position: fixed;
   width: 100%;
@@ -67,8 +71,9 @@ justify-content: center;
 }
 .primero{
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  margin-left: 5%;
+  height: 100vh;
+  /* justify-content: space-around; */
 }
 .brand{
   text-align: justify;
@@ -80,18 +85,17 @@ justify-content: center;
   flex-direction: row;
   padding-left: 10%;
   padding-right: 10%;
-  margin-top: 5%;
   justify-content: space-around;
-  /* align-content: flex-end; */
+  height: 100vh;
+  
 }
 
    .skills{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    padding-top: 3%;
+    width: 90%;
  
   } 
 
@@ -149,19 +153,21 @@ a{
 } 
 
 #about{
-  margin-top: 30px;
+  
   font-size: large;
   font-family: 'Russo One', sans-serif;
   text-align: justify;
   text-justify: inter-word;
 }
 
-.primero{
+.about{
   width: 50%;
 }
 
+
 #skills{
-  margin-top: 5%;
+  margin-left: 45%;
+  margin-bottom: -1.5%;
   font-family: 'Russo One', sans-serif;
   font-size: large;
 
@@ -259,6 +265,9 @@ h2{
 .mobileView{
   display: none;
 }
+
+
+
 
 /* ============================================================================DARK MODE================================================================== */
 
