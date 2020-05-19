@@ -70,10 +70,12 @@ justify-content: center;
 .techUsed{
   margin-top: 5%;
 }
+
 .primero{
   display: flex;
   margin-left: 5%;
   height: 100vh;
+  align-items: center;
   /* justify-content: space-around; */
 }
 .brand{
@@ -167,12 +169,11 @@ a{
 
 
 #skills{
-  margin-left: 45%;
-  margin-bottom: -1.5%;
+  /* margin-left: 45%; */
+  /* margin-bottom: -13.5%; */
   font-family: 'Russo One', sans-serif;
   font-size: large;
-
-
+ 
 }
 .contact{
   margin-top: 30px;
