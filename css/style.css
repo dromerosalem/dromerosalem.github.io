@@ -132,22 +132,24 @@ a{
   margin-bottom: 20px;
 }
 .experience{
-  display: flex;
-  flex-direction: column;
+  display: none;
+  /* flex-direction: column;
   justify-content: flex-start;
   height: 400px;
   overflow-y: auto;
   white-space: nowrap;
-  margin-top: 50px;
+  margin-top: 50px; */
   /* width: 50%; */
   
 }
 
  #experience{
-  text-align: center;
+  /* text-align: center;
   margin-top: 30px;
   font-family: 'Russo One', sans-serif;
-  font-size: large; 
+  font-size: large;  */
+  display: none;
+  
 } 
 
 #about{
