@@ -389,6 +389,9 @@ nav{
   #projects{
     margin-left: 20%;
   }
+  .project-pic:hover{
+    transform: scale(3);
+  }
 
 }
 
