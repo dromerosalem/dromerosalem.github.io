@@ -203,7 +203,7 @@ h1{
 }
 
 #projects{
-  margin-top: 5%;
+  /* margin-top: 5%; */
   margin-left: 45%;
   font-size: 200%;
   font-family: 'Russo One', sans-serif;
@@ -260,7 +260,11 @@ h2{
 }
 
 
-
+.moreSoon{
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+}
 
 /* ============================================================================DARKMODE================================================================== */
 
