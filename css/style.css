@@ -72,7 +72,8 @@ justify-content: center;
 .primero{
   display: flex;
   margin-left: 5%;
-  height: 100vh;
+  height: 100%;
+  margin-bottom: 10%;
   /* justify-content: space-around; */
 }
 .brand{
@@ -111,7 +112,7 @@ justify-content: center;
 article{
   align-self: center;
   text-align: center;
-  width: 50%;
+  width: 100%;
 }
 
 hr{
@@ -138,7 +139,6 @@ a{
   overflow-y: auto;
   white-space: nowrap;
   margin-top: 50px;
-
   
 }
 
@@ -363,7 +363,7 @@ nav{
   .for_slick_slider {
     display: table !important;
     table-layout: fixed !important;
-    width: 100% !important;
+    width: 80% !important;
   }
   .description{
     display: flex;
@@ -377,6 +377,16 @@ nav{
     flex-direction: column;
     justify-content: space-around;
     margin-top: 50px;
+  }
+
+  .moreSoon{
+    margin-top: 80%;
+    margin-left: 10%;
+
+  }
+
+  #projects{
+    margin-left: 20%;
   }
 
 }
