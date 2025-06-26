@@ -21,8 +21,10 @@ function setupPage() {
     element.classList.toggle('dark-mode') 
     const particles = document.querySelector('#particles-js')
     // particles.classList.toggle('.particles-js-white')
-    if (particles && particles.parentNode) {
-      particles.parentNode.removeChild(particles)
+    if (particles !== null) {
+      if (particles.parentNode) {
+        particles.parentNode.removeChild(particles)
+      }
     }
 
   
