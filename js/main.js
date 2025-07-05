@@ -80,7 +80,7 @@ function myFunction() {
 
   // Choose particle and background colours depending on mode
   const particleColor = isDarkMode ? '#000000' : '#ffffff'  // Dark-text on light bg
-  const backgroundColor = isDarkMode ? '#ffffff' : '#000000' // Invert so always visible
+  const backgroundColor = isDarkMode ? 'whitesmoke' : '#000000' // Match body colour so canvas blends in
 
   // Reinitialize particles and update background
   initializeParticles(particleColor, backgroundColor)

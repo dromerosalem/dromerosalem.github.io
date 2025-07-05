@@ -336,12 +336,15 @@ canvas{
 } 
 
 #particles-js{ 
-  /* position:absolute;  */
-  position: absolute;
+  /* I pin the layer to the viewport so particles are visible across every section */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
   background-color: #000000; 
+  pointer-events: none; /* I avoid blocking clicks */
 } 
 
 

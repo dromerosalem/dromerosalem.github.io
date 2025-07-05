@@ -69,7 +69,7 @@ test('toggling once switches to light mode with visible black particles on white
   myFunction() // simulate user clicking toggle once
 
   const container = document.querySelector('#particles-js')
-  expect(container.style.backgroundColor).toBe('rgb(255, 255, 255)')
+  expect(container.style.backgroundColor).toBe('whitesmoke')
   expect(document.body.classList.contains('dark-mode')).toBe(true)
 
   // Expect black particles
