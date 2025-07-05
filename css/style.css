@@ -79,6 +79,7 @@ justify-content: center;
 .brand{
   text-align: justify;
   text-justify: inter-word;
+  margin-bottom: 1rem;
 }
 
 .first{
@@ -96,8 +97,8 @@ justify-content: center;
     flex-direction: row;
     justify-content: space-around;
     padding-top: 3%;
-    width: 90%;
- 
+    width: 45%;
+    flex-wrap: wrap;
   } 
 
  
