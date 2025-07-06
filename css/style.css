@@ -491,7 +491,7 @@ nav{
    background-color: #eee;
    border-radius: 2px;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-  }
+}
 article{
   align-self: center;
   text-align: center;
@@ -1554,6 +1554,67 @@ canvas{
     font-size: 10px;
     text-align: center;
   }
+
+  /* I add mobile styling for project catalog */
+  #project-catalog {
+    font-size: 2rem;
+    margin: 30px 0 20px 0;
+  }
+
+  .project-catalog-section {
+    margin: 20px auto;
+    padding: 0 2.5%;
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px 0;
+  }
+
+  .catalog-card {
+    border-radius: 15px;
+  }
+
+  .catalog-image {
+    height: 180px;
+  }
+
+  .catalog-content {
+    padding: 20px;
+  }
+
+  .catalog-content h4 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .catalog-content p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .catalog-links {
+    gap: 10px;
+  }
+
+  .catalog-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    flex: 1;
+    justify-content: center;
+    min-width: 120px;
+  }
+
+  .tech-badge {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+  }
+
+  .catalog-overlay {
+    padding: 12px;
+  }
 }
 
  /* main {
@@ -1919,6 +1980,309 @@ progress{
   margin: 0;
   padding: 20px 15px;
   min-height: 120px;
+}
+
+/* ============================================================================PROJECT CATALOG================================================================== */
+
+/* I style the project catalog heading */
+#project-catalog {
+  font-size: 2.5rem;
+  font-family: 'Russo One', sans-serif;
+  text-align: center;
+  color: #00ffff;
+  text-shadow: 
+    0 0 2px #00ffff,
+    0 0 4px #00ffff,
+    0 0 8px rgba(0, 255, 255, 0.5);
+  letter-spacing: 2px;
+  margin: 50px 0 30px 0;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+  padding-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* I style the project catalog section container */
+.project-catalog-section {
+  margin: 40px auto;
+  padding: 0 2%;
+  max-width: 1400px;
+}
+
+/* I create the grid layout for project cards */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+/* I style individual project cards */
+.catalog-card {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 30, 30, 0.2));
+  border: 2px solid rgba(0, 255, 255, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.catalog-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 255, 255, 0.4);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+/* I add futuristic corner accents */
+.catalog-card::before,
+.catalog-card::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.catalog-card::before {
+  top: 15px;
+  left: 15px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.catalog-card::after {
+  bottom: 15px;
+  right: 15px;
+  border-left: none;
+  border-top: none;
+}
+
+/* I style the project image container */
+.catalog-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.catalog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.catalog-card:hover .catalog-image img {
+  transform: scale(1.05);
+}
+
+/* I create the tech overlay */
+.catalog-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    transparent 50%,
+    rgba(0, 255, 255, 0.1) 100%
+  );
+  opacity: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px;
+}
+
+.catalog-card:hover .catalog-overlay {
+  opacity: 1;
+}
+
+/* I style the technology badges */
+.catalog-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-badge {
+  background: rgba(0, 255, 255, 0.9);
+  color: #000000;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  text-shadow: none;
+}
+
+.tech-badge i {
+  font-size: 1rem;
+}
+
+/* I style the project content */
+.catalog-content {
+  padding: 25px;
+}
+
+.catalog-content h4 {
+  font-size: 1.5rem;
+  font-family: 'Russo One', sans-serif;
+  color: #00ffff;
+  margin-bottom: 10px;
+  text-shadow: 
+    0 0 2px #00ffff,
+    0 0 4px rgba(0, 255, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+.catalog-content p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+/* I style the action buttons */
+.catalog-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.catalog-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 2px solid transparent;
+  backdrop-filter: blur(10px);
+  text-shadow: none;
+}
+
+.catalog-btn.primary {
+  background: linear-gradient(135deg, #00ffff, #00cccc);
+  color: #000000;
+  border-color: rgba(0, 255, 255, 0.3);
+}
+
+.catalog-btn.primary:hover {
+  background: linear-gradient(135deg, #ffffff, #00ffff);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+}
+
+.catalog-btn.secondary {
+  background: rgba(0, 0, 0, 0.3);
+  color: #00ffff;
+  border-color: rgba(0, 255, 255, 0.3);
+}
+
+.catalog-btn.secondary:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+}
+
+.dark-mode .techUsed i {
+  color: #0066cc;
+}
+
+/* I add light mode styling for project catalog */
+.dark-mode #project-catalog {
+  color: #0066cc;
+  text-shadow: 
+    0 0 2px #0066cc,
+    0 0 4px #0066cc,
+    0 0 8px rgba(0, 102, 204, 0.5);
+  border-bottom-color: rgba(0, 102, 204, 0.4);
+}
+
+.dark-mode .catalog-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.8));
+  border: 2px solid rgba(0, 102, 204, 0.3);
+  box-shadow: 
+    0 10px 30px rgba(0, 102, 204, 0.1),
+    0 0 20px rgba(0, 102, 204, 0.05);
+}
+
+.dark-mode .catalog-card:hover {
+  border-color: rgba(0, 102, 204, 0.5);
+  box-shadow: 
+    0 20px 40px rgba(0, 102, 204, 0.15),
+    0 0 30px rgba(0, 102, 204, 0.1);
+}
+
+.dark-mode .catalog-card::before,
+.dark-mode .catalog-card::after {
+  border-color: rgba(0, 102, 204, 0.6);
+}
+
+.dark-mode .catalog-overlay {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    transparent 50%,
+    rgba(0, 102, 204, 0.1) 100%
+  );
+}
+
+.dark-mode .tech-badge {
+  background: rgba(0, 102, 204, 0.9);
+  color: #ffffff;
+  border: 1px solid rgba(0, 102, 204, 0.3);
+}
+
+.dark-mode .catalog-content h4 {
+  color: #0066cc;
+  text-shadow: 
+    0 0 2px #0066cc,
+    0 0 4px rgba(0, 102, 204, 0.5);
+}
+
+.dark-mode .catalog-content p {
+  color: #444444;
+}
+
+.dark-mode .catalog-btn.primary {
+  background: linear-gradient(135deg, #0066cc, #0052a3);
+  color: #ffffff;
+  border-color: rgba(0, 102, 204, 0.3);
+}
+
+.dark-mode .catalog-btn.primary:hover {
+  background: linear-gradient(135deg, #0080ff, #0066cc);
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.4);
+}
+
+.dark-mode .catalog-btn.secondary {
+  background: rgba(255, 255, 255, 0.7);
+  color: #0066cc;
+  border-color: rgba(0, 102, 204, 0.3);
+}
+
+.dark-mode .catalog-btn.secondary:hover {
+  background: rgba(0, 102, 204, 0.1);
+  border-color: rgba(0, 102, 204, 0.6);
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
 }
 
 
