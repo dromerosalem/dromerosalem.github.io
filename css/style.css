@@ -136,11 +136,15 @@ margin: 1%;
 }
 .primero{
   display: flex;
-  margin-left: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
   height: 100%;
   margin-bottom: 5%;
   margin-top: 2%;
-  /* justify-content: space-around; */
+  min-height: 80vh;
+  width: 96%;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .brand{
   text-align: justify;
@@ -152,7 +156,7 @@ margin: 1%;
 
 .first{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   margin-top: 0;
@@ -161,6 +165,9 @@ margin: 1%;
   min-height: calc(100vh - 50px);
   box-sizing: border-box;
   padding: 50px 5% 0; /* push content below 50-px nav */
+  justify-content: space-around;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
    .skills{
@@ -168,13 +175,15 @@ margin: 1%;
     flex-direction: row;
     justify-content: space-around;
     padding-top: 3%;
-    width: 45%;
+    width: 40%;
     flex-wrap: wrap;
     border: 1px solid rgba(0, 255, 255, 0.15);
     border-radius: 8px;
     padding: 20px;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
+    min-height: 60vh;
+    align-content: flex-start;
   } 
 
  
@@ -252,12 +261,14 @@ a{
 }
 
 .about{
-  width: 50%;
+  width: 55%;
+  /* I add subtle neon container styling */
   border: 1px solid rgba(0, 255, 255, 0.1);
   border-radius: 8px;
   padding: 20px;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
+  min-height: 60vh;
 }
 
 
@@ -658,23 +669,41 @@ nav{
     flex-direction: column;
     margin: 10px 0 20px 0;
     align-items: center;
-    padding: 0 5%;
+    padding: 0;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    justify-content: flex-start;
   }
 
   .about{
     display: block;
-    width: 100%;
+    width: 95%;
     margin-bottom: 1.5rem;
-    padding: 15px;
+    /* I optimize about section for mobile */
+    padding: 20px 15px;
     margin: 0 0 20px 0;
+    min-height: calc(60vh - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .skills{
-    width: 100%;
+    width: 95%;
     justify-content: space-evenly;
     margin-top: 20px;
-    padding: 15px;
+    /* I optimize skills for mobile */
+    padding: 20px 15px;
     margin: 20px 0;
+    min-height: calc(35vh - 30px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    align-content: start;
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
   }
 
   /* I optimize contacts for mobile */
@@ -790,6 +819,45 @@ nav{
     border: 2px solid rgba(0, 102, 204, 0.3);
   }
 
+  /* I optimize text spacing for mobile */
+  .brand{
+    margin-bottom: 2rem;
+    font-size: 105%;
+    line-height: 1.8;
+  }
+
+  /* I make skills icons larger and better spaced on mobile */
+  .sk{
+    margin: 0;
+    padding: 15px 10px;
+    font-size: 85%;
+    text-align: center;
+    border-radius: 8px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+
+  .sk i{
+    font-size: 200%;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  /* I add hover effects for mobile skills */
+  .sk:hover{
+    transform: scale(1.05);
+    text-shadow: 
+      0 0 2px #00ffff,
+      0 0 4px rgba(0, 255, 255, 0.6);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    background: rgba(0, 255, 255, 0.05);
+  }
+
 }
 
  /* main {
@@ -847,6 +915,55 @@ nav{
     padding-top: 0;
     margin-top: 0;
     height: 100vh;
+  }
+
+  /* I restore desktop layout for about section */
+  .primero{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: 80vh;
+    align-items: flex-start;
+    padding-top: 3%;
+  }
+
+  .about{
+    width: 55%;
+    margin-bottom: 0;
+    margin-right: 2%;
+  }
+
+  .skills{
+    width: 40%;
+    margin-top: 0;
+    margin-left: 2%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 3%;
+    min-height: 60vh;
+  }
+
+  .sk{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    text-align: center;
+    font-size: 100%;
+    min-height: auto;
+  }
+
+  .sk i{
+    font-size: 200%;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 }
 
