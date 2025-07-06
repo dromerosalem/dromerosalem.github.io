@@ -417,51 +417,126 @@ h2{
 
 /* ============================================================================DARKMODE================================================================== */
 
-
 .onoffswitch {
-  position: relative; width: 90px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  position: relative; 
+  width: 120px;
+  height: 50px;
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none;
+  /* I add futuristic container styling */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 30, 30, 0.3));
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 25px;
+  box-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.2),
+    inset 0 0 10px rgba(0, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
 }
+
 .onoffswitch-checkbox {
   display: none;
 }
+
 .onoffswitch-label {
-  display: block; overflow: hidden; cursor: pointer;
-  border: 2px solid #999999; border-radius: 20px;
+  display: block; 
+  overflow: hidden; 
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  height: 46px;
+  position: relative;
+  transition: all 0.3s ease;
 }
+
 .onoffswitch-inner {
-  display: block; width: 200%; margin-left: -100%;
-  transition: margin 0.3s ease-in 0s;
+  display: block; 
+  width: 200%; 
+  margin-left: -100%;
+  transition: margin 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  height: 46px;
 }
+
 .onoffswitch-inner:before, .onoffswitch-inner:after {
-  display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-  font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  display: block; 
+  float: left; 
+  width: 50%; 
+  height: 46px; 
+  padding: 0; 
+  line-height: 46px;
+  font-size: 12px; 
+  color: #00ffff; 
+  font-family: 'Inconsolata', monospace; 
+  font-weight: bold;
   box-sizing: border-box;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 
+    0 0 2px #00ffff,
+    0 0 4px rgba(0, 255, 255, 0.5);
 }
+
 .onoffswitch-inner:before {
   content: "ON";
-  padding-left: 10px;
-  background-color: #34A7C1; color: #FFFFFF;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 200, 200, 0.1));
+  color: #00ffff;
+  border-right: 1px solid rgba(0, 255, 255, 0.3);
 }
+
 .onoffswitch-inner:after {
   content: "OFF";
-  padding-right: 10px;
-  background-color: #EEEEEE; color: #999999;
-  text-align: right;
+  background: linear-gradient(135deg, rgba(100, 100, 100, 0.2), rgba(50, 50, 50, 0.1));
+  color: #666666;
+  text-shadow: 
+    0 0 1px #666666,
+    0 0 2px rgba(102, 102, 102, 0.3);
 }
+
 .onoffswitch-switch {
-  display: block; width: 18px; margin: 6px;
-  background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
-  right: 56px;
-  border: 2px solid #999999; border-radius: 20px;
-  transition: all 0.3s ease-in 0s; 
+  display: block; 
+  width: 38px; 
+  height: 38px;
+  margin: 4px;
+  background: linear-gradient(135deg, #00ffff, #00cccc);
+  position: absolute; 
+  top: 0; 
+  bottom: 0;
+  right: 78px;
+  border: 2px solid rgba(0, 255, 255, 0.6);
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.4),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
+  /* I add futuristic glow orb effect */
+  background-image: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent 50%);
 }
+
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
   margin-left: 0;
 }
+
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-  right: 0px; 
+  right: 4px;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 255, 0.6),
+    inset 0 0 15px rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* I add hover effects for the toggle */
+.onoffswitch-label:hover .onoffswitch-switch {
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.8),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label:hover .onoffswitch-switch {
+  box-shadow: 
+    0 0 25px rgba(0, 255, 255, 0.9),
+    inset 0 0 20px rgba(255, 255, 255, 0.5);
+  transform: scale(1.15);
 }
 
 .darkmode{
@@ -610,6 +685,67 @@ h2{
 .dark-mode hr{
   border-top: 1px solid rgba(0, 102, 204, 0.4);
   box-shadow: 0 0 2px rgba(0, 102, 204, 0.3);
+}
+
+/* I style the toggle button for light mode */
+.dark-mode .onoffswitch {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.8));
+  border: 2px solid rgba(0, 102, 204, 0.4);
+  box-shadow: 
+    0 0 10px rgba(0, 102, 204, 0.2),
+    inset 0 0 10px rgba(0, 102, 204, 0.05);
+}
+
+.dark-mode .onoffswitch-inner:before, 
+.dark-mode .onoffswitch-inner:after {
+  color: #0066cc;
+  text-shadow: 
+    0 0 2px #0066cc,
+    0 0 4px rgba(0, 102, 204, 0.5);
+}
+
+.dark-mode .onoffswitch-inner:before {
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.2), rgba(0, 80, 160, 0.1));
+  color: #0066cc;
+  border-right: 1px solid rgba(0, 102, 204, 0.3);
+}
+
+.dark-mode .onoffswitch-inner:after {
+  background: linear-gradient(135deg, rgba(150, 150, 150, 0.2), rgba(100, 100, 100, 0.1));
+  color: #888888;
+  text-shadow: 
+    0 0 1px #888888,
+    0 0 2px rgba(136, 136, 136, 0.3);
+}
+
+.dark-mode .onoffswitch-switch {
+  background: linear-gradient(135deg, #0066cc, #0052a3);
+  border: 2px solid rgba(0, 102, 204, 0.6);
+  box-shadow: 
+    0 0 10px rgba(0, 102, 204, 0.4),
+    inset 0 0 10px rgba(255, 255, 255, 0.3);
+  background-image: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), transparent 50%);
+}
+
+.dark-mode .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  box-shadow: 
+    0 0 15px rgba(0, 102, 204, 0.6),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.dark-mode .onoffswitch-label:hover .onoffswitch-switch {
+  box-shadow: 
+    0 0 20px rgba(0, 102, 204, 0.8),
+    inset 0 0 15px rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.dark-mode .onoffswitch-checkbox:checked + .onoffswitch-label:hover .onoffswitch-switch {
+  box-shadow: 
+    0 0 25px rgba(0, 102, 204, 0.9),
+    inset 0 0 20px rgba(255, 255, 255, 0.6);
+  transform: scale(1.15);
 }
 
 /* ===================================================================particles.js===================================================== */
