@@ -105,6 +105,49 @@ function setupPage() {
     // console.log('Hello World')
   })
 
+  // I add mobile menu functionality
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle')
+  const mobileMenu = document.querySelector('.bar')
+  const navLinks = document.querySelectorAll('.navbar a')
+  
+  // Toggle mobile menu
+  mobileMenuToggle.addEventListener('click', () => {
+    mobileMenuToggle.classList.toggle('active')
+    mobileMenu.classList.toggle('active')
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : ''
+  })
+  
+  // Close mobile menu when clicking on navigation links
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenuToggle.classList.remove('active')
+      mobileMenu.classList.remove('active')
+      document.body.style.overflow = ''
+    })
+  })
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const isClickInsideNav = mobileMenuToggle.contains(e.target) || mobileMenu.contains(e.target)
+    
+    if (!isClickInsideNav && mobileMenu.classList.contains('active')) {
+      mobileMenuToggle.classList.remove('active')
+      mobileMenu.classList.remove('active')
+      document.body.style.overflow = ''
+    }
+  })
+  
+  // Handle window resize - close mobile menu on desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 600) {
+      mobileMenuToggle.classList.remove('active')
+      mobileMenu.classList.remove('active')
+      document.body.style.overflow = ''
+    }
+  })
+
   // Default: dark mode (white particles on black background)
   initializeParticles('#ffffff', '#000000')
 
