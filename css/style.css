@@ -405,22 +405,46 @@ nav{
 }
 .primero{
   display: flex;
-  margin-left: 2%;
-  margin-right: 2%;
-  height: 100%;
-  margin-bottom: 5%;
-  margin-top: 2%;
-  min-height: 80vh;
-  width: 96%;
   flex-direction: row;
   justify-content: space-around;
+  min-height: 80vh;
+  align-items: flex-start;
+  padding-top: 3%;
 }
 .brand{
   text-align: justify;
   text-justify: inter-word;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
-  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.brand:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(0, 255, 255, 0.2);
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* I add subtle accent line */
+.brand::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #00ffff, rgba(0, 255, 255, 0.3));
+  border-radius: 0 2px 2px 0;
 }
 
 .first{
@@ -444,16 +468,21 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding-top: 3%;
+    padding: 40px;
     width: 40%;
     flex-wrap: wrap;
-    border: 1px solid rgba(0, 255, 255, 0.15);
-    border-radius: 8px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 255, 255, 0.2);
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 30, 30, 0.2));
+    backdrop-filter: blur(20px);
     min-height: 60vh;
     align-content: flex-start;
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   } 
 
  
@@ -518,37 +547,89 @@ a{
 } 
 
 #about{
-  font-size: large;
+  font-size: 2.5rem;
   font-family: 'Russo One', sans-serif;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: center;
+  color: #00ffff;
   text-shadow: 
-    0 0 1px #00ffff,
     0 0 2px #00ffff,
-    0 0 4px rgba(0, 255, 255, 0.5);
-  letter-spacing: 0.05em;
-  margin-bottom: 20px;
+    0 0 4px #00ffff,
+    0 0 8px rgba(0, 255, 255, 0.5);
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+  padding-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .about{
   width: 55%;
-  /* I add subtle neon container styling */
-  border: 1px solid rgba(0, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+  margin-bottom: 0;
+  margin-right: 2%;
+  border: 2px solid rgba(0, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 30, 30, 0.2));
+  backdrop-filter: blur(20px);
   min-height: 60vh;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+/* I add hover effects for about section */
+.about:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 255, 255, 0.4);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+/* I add futuristic corner accents */
+.about::before,
+.about::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.about::before {
+  top: 15px;
+  left: 15px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.about::after {
+  bottom: 15px;
+  right: 15px;
+  border-left: none;
+  border-top: none;
+}
 
 #skills{
-  margin-left: 45%;
-  margin-bottom: -1.5%;
+  font-size: 2.5rem;
   font-family: 'Russo One', sans-serif;
-  font-size: large;
-
-
+  text-align: center;
+  color: #00ffff;
+  text-shadow: 
+    0 0 2px #00ffff,
+    0 0 4px #00ffff,
+    0 0 8px rgba(0, 255, 255, 0.5);
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  margin-left: 0;
+  margin-top: 0;
 }
 .contact{
   margin-top: 30px;
@@ -622,40 +703,76 @@ h1{
 .sk{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 20px 15px;
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
   transition: all 0.3s ease;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid transparent;
+  border-radius: 15px;
+  border: 2px solid rgba(0, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 30, 30, 0.1));
+  backdrop-filter: blur(10px);
+  min-height: 120px;
+  min-width: 120px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.2),
+    0 0 10px rgba(0, 255, 255, 0.05);
 }
 
-i{
-  margin-top: 4px;
-  margin-bottom: 4px;
-  font-size: 200%;
+.sk i{
+  margin-bottom: 10px;
+  font-size: 250%;
+  color: #00ffff;
+  text-shadow: 
+    0 0 2px #00ffff,
+    0 0 4px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
 }
 
 h3{
-  font-size: large;
+  font-size: 1rem;
   font-weight: bold;
-  margin: 10px;
+  margin: 5px 0;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 h2{
-  font-size: medium;
-  margin: 10px;
+  font-size: 0.8rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: normal;
+  letter-spacing: 0.3px;
 }
 
 .sk:hover{
-  transform: scale(1.2);
+  transform: translateY(-10px) scale(1.05);
+  border-color: rgba(0, 255, 255, 0.6);
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 200, 200, 0.05));
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.sk:hover i {
+  color: #ffffff;
+  text-shadow: 
+    0 0 4px #00ffff,
+    0 0 8px #00ffff,
+    0 0 12px rgba(0, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+.sk:hover h3 {
+  color: #00ffff;
   text-shadow: 
     0 0 2px #00ffff,
     0 0 4px rgba(0, 255, 255, 0.6);
-  border: 1px solid rgba(0, 255, 255, 0.3);
-  background: rgba(0, 255, 255, 0.05);
 }
 
 .education{
@@ -798,14 +915,14 @@ h2{
 .onoffswitch-label:hover .onoffswitch-switch {
   box-shadow: 
     0 0 20px rgba(0, 255, 255, 0.8),
-    inset 0 0 15px rgba(255, 255, 255, 0.4);
+    inset 0 0 15px rgba(255, 255, 255, 0.5);
   transform: scale(1.05);
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label:hover .onoffswitch-switch {
   box-shadow: 
     0 0 25px rgba(0, 255, 255, 0.9),
-    inset 0 0 20px rgba(255, 255, 255, 0.5);
+    inset 0 0 20px rgba(255, 255, 255, 0.6);
   transform: scale(1.15);
 }
 
@@ -903,36 +1020,6 @@ h2{
 }
 
 .dark-mode .about{
-  border: 1px solid rgba(0, 102, 204, 0.2);
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 10px rgba(0, 102, 204, 0.1);
-}
-
-.dark-mode .brand{
-  text-shadow: 0 0 1px rgba(51, 51, 51, 0.4);
-  color: #444444;
-}
-
-.dark-mode .skills{
-  border: 1px solid rgba(0, 102, 204, 0.2);
-  background: rgba(255, 255, 255, 0.6);
-}
-
-.dark-mode .sk{
-  text-shadow: 0 0 1px rgba(51, 51, 51, 0.5);
-  color: #333333;
-}
-
-.dark-mode .sk:hover{
-  text-shadow: 
-    0 0 2px #0066cc,
-    0 0 4px rgba(0, 102, 204, 0.6);
-  border: 1px solid rgba(0, 102, 204, 0.4);
-  background: rgba(0, 102, 204, 0.1);
-  color: #0066cc;
-}
-
-.dark-mode .for_slick_slider{
   border: 2px solid rgba(0, 102, 204, 0.3);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.8));
   box-shadow: 
@@ -940,80 +1027,103 @@ h2{
     0 0 20px rgba(0, 102, 204, 0.05);
 }
 
-.dark-mode .for_slick_slider:hover {
+.dark-mode .about:hover {
   border-color: rgba(0, 102, 204, 0.5);
   box-shadow: 
     0 15px 40px rgba(0, 102, 204, 0.15),
     0 0 30px rgba(0, 102, 204, 0.1);
 }
 
-.dark-mode .for_slick_slider::before,
-.dark-mode .for_slick_slider::after {
+.dark-mode .about::before,
+.dark-mode .about::after {
   border-color: rgba(0, 102, 204, 0.6);
 }
 
-/* I style project content for light mode */
-.dark-mode .description h1 {
-  color: #0066cc;
-  text-shadow: 
-    0 0 2px #0066cc,
-    0 0 4px #0066cc,
-    0 0 8px rgba(0, 102, 204, 0.5);
-  border-bottom-color: rgba(0, 102, 204, 0.4);
-}
-
-.dark-mode .desc {
+.dark-mode .brand{
+  text-shadow: 0 0 1px rgba(51, 51, 51, 0.5);
+  color: #444444;
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(0, 102, 204, 0.2);
-  color: #333333;
 }
 
-.dark-mode .desc h6 {
-  color: #0066cc;
-  text-shadow: 0 0 2px rgba(0, 102, 204, 0.5);
-}
-
-.dark-mode .desc p {
-  color: #444444;
-}
-
-.dark-mode .desc h4 span {
-  color: #666666;
-}
-
-.dark-mode .tech {
-  background: linear-gradient(135deg, rgba(0, 102, 204, 0.08), rgba(0, 80, 160, 0.04));
-  border: 1px solid rgba(0, 102, 204, 0.3);
-}
-
-.dark-mode .tech h5 {
-  color: #0066cc;
-  text-shadow: 0 0 2px rgba(0, 102, 204, 0.5);
-}
-
-.dark-mode .techUsed {
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 102, 204, 0.3);
-  color: #333333;
-}
-
-.dark-mode .techUsed:hover {
-  background: rgba(0, 102, 204, 0.1);
-  border-color: rgba(0, 102, 204, 0.5);
-}
-
-.dark-mode .techUsed i {
-  color: #0066cc;
-}
-
-.dark-mode .project-pic {
-  border: 1px solid rgba(0, 102, 204, 0.4);
+.dark-mode .brand:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 102, 204, 0.3);
   box-shadow: 0 5px 15px rgba(0, 102, 204, 0.1);
 }
 
-.dark-mode .project-pic:hover {
-  border-color: rgba(0, 102, 204, 0.7);
-  box-shadow: 0 10px 25px rgba(0, 102, 204, 0.2);
+.dark-mode .brand::before {
+  background: linear-gradient(180deg, #0066cc, rgba(0, 102, 204, 0.3));
+}
+
+.dark-mode .skills{
+  border: 2px solid rgba(0, 102, 204, 0.3);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.8));
+  box-shadow: 
+    0 10px 30px rgba(0, 102, 204, 0.1),
+    0 0 20px rgba(0, 102, 204, 0.05);
+}
+
+.dark-mode .skills:hover {
+  border-color: rgba(0, 102, 204, 0.5);
+  box-shadow: 
+    0 15px 40px rgba(0, 102, 204, 0.15),
+    0 0 30px rgba(0, 102, 204, 0.1);
+}
+
+.dark-mode .skills::before,
+.dark-mode .skills::after {
+  border-color: rgba(0, 102, 204, 0.6);
+}
+
+.dark-mode .sk{
+  text-shadow: 0 0 1px rgba(51, 51, 51, 0.5);
+  color: #333333;
+  border: 2px solid rgba(0, 102, 204, 0.3);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(240, 248, 255, 0.6));
+  box-shadow: 
+    0 5px 15px rgba(0, 102, 204, 0.1),
+    0 0 10px rgba(0, 102, 204, 0.05);
+}
+
+.dark-mode .sk i {
+  color: #0066cc;
+  text-shadow: 
+    0 0 2px #0066cc,
+    0 0 4px rgba(0, 102, 204, 0.5);
+}
+
+.dark-mode .sk h3 {
+  color: #333333;
+}
+
+.dark-mode .sk h2 {
+  color: #666666;
+}
+
+.dark-mode .sk:hover{
+  transform: translateY(-10px) scale(1.05);
+  border-color: rgba(0, 102, 204, 0.6);
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 80, 160, 0.05));
+  box-shadow: 
+    0 15px 30px rgba(0, 102, 204, 0.2),
+    0 0 20px rgba(0, 102, 204, 0.15);
+}
+
+.dark-mode .sk:hover i {
+  color: #ffffff;
+  text-shadow: 
+    0 0 4px #0066cc,
+    0 0 8px #0066cc,
+    0 0 12px rgba(0, 102, 204, 0.8);
+  transform: scale(1.1);
+}
+
+.dark-mode .sk:hover h3 {
+  color: #0066cc;
+  text-shadow: 
+    0 0 2px #0066cc,
+    0 0 4px rgba(0, 102, 204, 0.6);
 }
 
 .dark-mode #contacts{
@@ -1153,31 +1263,27 @@ canvas{
     display: block;
     width: 95%;
     margin-bottom: 1.5rem;
-    /* I optimize about section for mobile */
-    padding: 20px 15px;
+    padding: 25px 20px;
     margin: 0 0 20px 0;
     min-height: calc(60vh - 30px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    border-radius: 15px;
   }
 
   .skills{
     width: 95%;
     justify-content: space-evenly;
     margin-top: 20px;
-    /* I optimize skills for mobile */
-    padding: 20px 15px;
+    padding: 25px 20px;
     margin: 20px 0;
     min-height: calc(35vh - 30px);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     align-content: start;
-    border: 1px solid rgba(0, 255, 255, 0.15);
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+    border-radius: 15px;
   }
 
   /* I optimize contacts for mobile */
@@ -1355,30 +1461,25 @@ canvas{
     padding: 15px 10px;
     font-size: 85%;
     text-align: center;
-    border-radius: 8px;
-    min-height: 80px;
+    border-radius: 12px;
+    min-height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
-    border: 1px solid transparent;
+    min-width: auto;
   }
 
   .sk i{
-    font-size: 200%;
-    margin-bottom: 5px;
+    font-size: 220%;
+    margin-bottom: 8px;
     display: block;
   }
 
   /* I add hover effects for mobile skills */
   .sk:hover{
-    transform: scale(1.05);
-    text-shadow: 
-      0 0 2px #00ffff,
-      0 0 4px rgba(0, 255, 255, 0.6);
-    border: 1px solid rgba(0, 255, 255, 0.3);
-    background: rgba(0, 255, 255, 0.05);
+    transform: translateY(-5px) scale(1.03);
   }
 
   /* I create mobile navigation */
@@ -1618,6 +1719,48 @@ canvas{
     border-right: 1px solid rgba(0, 102, 204, 0.3);
     box-shadow: 5px 0 20px rgba(0, 102, 204, 0.2);
   }
+}
+
+/* I add hover effects for skills section */
+.skills:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 255, 255, 0.4);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+/* I add futuristic corner accents */
+.skills::before,
+.skills::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.skills::before {
+  top: 15px;
+  left: 15px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.skills::after {
+  bottom: 15px;
+  right: 15px;
+  border-left: none;
+  border-top: none;
+}
+
+progress{
+  -webkit-appearance: none;
+   appearance: none;
+   background-color: #eee;
+   border-radius: 2px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
 
 
