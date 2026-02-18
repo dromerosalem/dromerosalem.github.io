@@ -2,6 +2,21 @@ import { motion } from 'framer-motion';
 import profilePic from '../../assets/me.png';
 
 export const About = () => {
+    const skillCategories = [
+        {
+            title: "AI & Orchestration",
+            skills: ['Claude Code', 'Antigravity', 'Stitch', 'Figma', 'Cursor', 'SKILL.md', 'LLM', 'MCP']
+        },
+        {
+            title: "Cloud & Infrastructure",
+            skills: ['Supabase', 'Firebase', 'Vercel', 'Google Console']
+        },
+        {
+            title: "Core Engineering",
+            skills: ['TypeScript', 'REACT', 'JavaScript', 'Vite', 'DJANGO', 'Python', 'Java', 'PostgreSQL', 'MongoDB', 'NODE.js', 'GIT']
+        }
+    ];
+
     return (
         <section id="about" className="py-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4">
@@ -12,32 +27,39 @@ export const About = () => {
                         viewport={{ once: true }}
                     >
                         <h2 className="text-4xl md:text-5xl font-bold mb-8 gold-gradient-text tracking-tighter uppercase font-sans">About Me</h2>
-                        <div className="space-y-6 text-zinc-400 leading-relaxed text-lg">
+                        <div className="space-y-6 text-zinc-400 leading-relaxed text-lg mb-12">
                             <p className="text-white font-medium">
-                                My curiosity to discover the 'WHY' led me to have a wide experience in different fields.
+                                I build high-performance systems. As a <span className="text-gold-accent italic">Software Orchestrator</span>, I design the architectures and AI infrastructure that allow digital products to scale without breaking.
                             </p>
                             <p>
-                                Graduated of Bioscience I was always curious about to know how our DNA works. I had the chance to work in different clinical laboratories and chemical laboratories starting as laboratory assistant to end up leading full teams in a medical centre.
+                                My work is rooted in <span className="text-white">R&D</span> and <span className="text-white">optimization</span>. I solve complex integration problems and build the structural foundations for global platforms. I don't just ship features: I engineer resilient, future-proof ecosystems.
                             </p>
                             <p>
-                                Experience in Finance and Banking, I wanted to know how the money flows around the society and the direct impact that has into my relatives and me. I started to work as a representative of a financial institution to end up writing internal compliance full procedures for my department for well known investment bank.
-                            </p>
-                            <p>
-                                But something that was following me since my youngest days and never left is the Fascination for Technologies in computers the curiosity always led me to be that friend that everyone has that fix your computer when something goes wrong, and not because I knew how to fix it but because the solution always is out there on internet waiting for you to help you, so I just google it!.
-                            </p>
-                            <p>
-                                I decided to make my fascination a profession.
+                                I focus on technical excellence and measurable results. Performance is my baseline, and scalability is my standard.
                             </p>
                         </div>
 
-                        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4">
-                            {[
-                                'REACT', 'JavaScript', 'DJANGO', 'Python', 'PostgreSQL', 'MongoDB',
-                                'express', 'BABEL', 'NODE.js', 'WEBPACK', 'HEROKU', 'SASS',
-                                'GIT', 'VS CODE', 'GitHub', 'HTML', 'CSS', 'NPM'
-                            ].map((skill) => (
-                                <div key={skill} className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-zinc-400 text-sm font-mono text-center">
-                                    {skill}
+                        {/* Skills Categories */}
+                        <div className="space-y-8">
+                            {skillCategories.map((category, idx) => (
+                                <div key={idx} className="space-y-4">
+                                    <div className="flex items-center gap-4">
+                                        <h3 className="text-gold-accent text-xs font-bold uppercase tracking-[0.2em] whitespace-nowrap">
+                                            {category.title}
+                                        </h3>
+                                        <div className="h-[1px] w-full bg-gradient-to-r from-gold-accent/30 to-transparent" />
+                                    </div>
+                                    <div className="flex flex-wrap gap-3">
+                                        {category.skills.map((skill) => (
+                                            <motion.div
+                                                key={skill}
+                                                whileHover={{ scale: 1.05, borderColor: 'rgba(180, 148, 90, 0.4)' }}
+                                                className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-zinc-300 text-xs font-mono transition-colors duration-300 hover:text-white"
+                                            >
+                                                {skill}
+                                            </motion.div>
+                                        ))}
+                                    </div>
                                 </div>
                             ))}
                         </div>

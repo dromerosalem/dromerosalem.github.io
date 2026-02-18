@@ -15,7 +15,7 @@ export const Hero = () => {
                     transition={{ delay: 0.2, duration: 1 }}
                     className="text-gold-accent font-mono text-[10px] sm:text-xs font-bold mb-8 block uppercase"
                 >
-                    Full Stack Developer • Integration Engineer
+                    Full Stack Developer • Integration Engineer • System Designer
                 </motion.span>
 
                 <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 leading-none">
@@ -25,8 +25,9 @@ export const Hero = () => {
                 </h1>
 
                 <p className="text-lg md:text-xl text-zinc-400 max-w-3xl leading-relaxed mx-auto mb-12">
-                    Architecting high-impact financial platforms and orchestrating <span className="text-white font-medium border-b border-gold-accent/30">complex digital ecosystems</span>.
-                    Leading R&D initiatives at <span className="text-gold-accent">InvestCloud</span>, specializing in the intersection of scalable architecture and integrated engineering.
+                    Acting as a <span className="text-white font-medium border-b border-gold-accent/30">Software Orchestrator</span> across
+                    high-performance <span className="text-gold-accent">R&D</span> initiatives. Scaling complex architectures through
+                    modern infrastructure and predictive AI systems.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

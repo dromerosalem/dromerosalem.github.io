@@ -64,36 +64,40 @@ export const projects: Project[] = [
     {
         id: 'nomadsync',
         title: 'NomadSync',
-        description: 'Tactical adventure dashboard for digital nomads. Features dark mode aesthetics, interactive maps, and travel logistics.',
-        tags: ['React', 'Tailwind', 'Mapbox', 'UX/UI'],
+        description: 'A comprehensive travel orchestration platform for digital nomads. Features real-time group synchronization, AI-powered receipt scanning, and interactive globe mapping. Optimized for MOBILE-VIEW.',
+        tags: ['Ionic', 'Supabase', 'React', 'Google Gemini', 'PWA', 'Leaflet'],
         link: 'https://www.nomadsync.co',
+        githubLink: 'https://github.com/dromerosalem/NomadSync',
         image: nomadsyncHero,
         category: 'vibe'
     },
     {
         id: 'kill-bill',
         title: 'Kill Bill',
-        description: 'Cinematic, minimalist receipt splitter. Bold typography and high-contrast design inspired by the movie aesthetic.',
-        tags: ['React', 'OCR', 'Design System'],
+        description: 'An AI-driven group expense splitter built for quick, on-the-go billing management. Cinematic UI with high-contrast design inspired by minimalist aesthetics. Optimized for MOBILE-VIEW.',
+        tags: ['Ionic', 'React', 'Google GenAI', 'Vite', 'Tailwind'],
         link: 'https://kill-bill-wheat.vercel.app/',
+        githubLink: 'https://github.com/dromerosalem/Kill-Bill',
         image: killbillHero,
         category: 'vibe'
     },
     {
         id: 'wonders',
         title: 'Wonders Travel',
-        description: 'Atmospheric travel platform with immersive backgrounds and rounded UI. Focus on storytelling and mood.',
-        tags: ['Next.js', 'Framer Motion', 'Atmosphere'],
+        description: 'A premium travel exploration platform showcasing global landmarks through high-performance visual storytelling and immersive transitions. Built with a focus on core web vitals and premium UX.',
+        tags: ['React', 'Framer Motion', 'Tailwind', 'Vercel Analytics'],
         link: 'https://wonders-travel.vercel.app/',
+        githubLink: 'https://github.com/dromerosalem/wonders-travel',
         image: wondersHero,
         category: 'vibe'
     },
     {
         id: 'hipoteca',
-        title: 'Simulador de Hipoteca',
-        description: 'Interactive financial tool with real-time data visualization. Clean, card-based layout making complex data approachable.',
-        tags: ['React', 'D3.js', 'FinTech'],
+        title: 'Mortgage Simulator AI',
+        description: 'Advanced financial R&D tool providing real-time mortgage projections through interactive data visualization and AI analysis. Simplifies complex debt modeling for approachable decision making.',
+        tags: ['React', 'Google GenAI', 'Recharts', 'Vite', 'TypeScript'],
         link: 'https://simulador-de-hipoteca.vercel.app/',
+        githubLink: 'https://github.com/dromerosalem/Simulador-de-Hipoteca',
         image: hipotecaHero,
         category: 'vibe'
     }
