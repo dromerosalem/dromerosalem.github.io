@@ -23,6 +23,8 @@ export interface Project {
     images?: string[];
     category: ProjectCategory;
     isMobile?: boolean;
+    challenge?: string;
+    solution?: string;
 }
 
 export const projects: Project[] = [
@@ -34,7 +36,9 @@ export const projects: Project[] = [
         tags: ['Django', 'React', 'PostgreSQL', 'Docker'],
         githubLink: 'https://github.com/dromerosalem/project-4',
         image: labsHero,
-        category: 'raw'
+        category: 'raw',
+        challenge: 'Simplifying complex medical scheduling while ensuring data integrity across a multi-tenant environment.',
+        solution: 'Architected a robust relational schema in PostgreSQL with Django signal-driven atomic updates for real-time booking availability.'
     },
     {
         id: 'space-x',
@@ -75,7 +79,9 @@ export const projects: Project[] = [
         githubLink: 'https://github.com/dromerosalem/NomadSync',
         images: [nomadsync1, nomadsync2, nomadsync3],
         category: 'vibe',
-        isMobile: true
+        isMobile: true,
+        challenge: 'Synchronizing real-time travel itineraries across group members with intermittent network connectivity.',
+        solution: 'Implemented an offline-first sync engine using Supabase real-time subscriptions and optimistic state updates via custom React hooks.'
     },
     {
         id: 'kill-bill',
@@ -86,7 +92,9 @@ export const projects: Project[] = [
         githubLink: 'https://github.com/dromerosalem/Kill-Bill',
         images: [killbill1, killbill2],
         category: 'vibe',
-        isMobile: true
+        isMobile: true,
+        challenge: 'Automating complex debt simplification algorithms while maintaining a low-latency user experience on mobile.',
+        solution: 'Deployed a custom graph-based settlement algorithm and integrated Gemini-Pro for intelligent receipt parsing via serverless Edge Functions.'
     },
     {
         id: 'wonders',
@@ -106,6 +114,8 @@ export const projects: Project[] = [
         link: 'https://simulador-de-hipoteca.vercel.app/',
         githubLink: 'https://github.com/dromerosalem/Simulador-de-Hipoteca',
         image: hipotecaHero,
-        category: 'vibe'
+        category: 'vibe',
+        challenge: 'Transforming dense financial algorithms into interactive, high-performance visualizations without UI stutter.',
+        solution: 'Utilized Recharts for SVG rendering and memoized calculation workers to handle complex debt amortizations on the fly.'
     }
 ];

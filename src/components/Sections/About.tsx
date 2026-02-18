@@ -74,11 +74,11 @@ export const About = () => {
                     >
                         <div className="relative">
                             <div className="absolute -inset-4 bg-gold-accent/5 rounded-3xl blur-3xl opacity-50" />
-                            <div className="relative aspect-square md:aspect-auto md:h-[400px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 shadow-2xl">
+                            <div className="relative aspect-square md:aspect-auto md:h-[450px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 shadow-2xl">
                                 <img
                                     src={profilePic}
                                     alt="David Romero Salem"
-                                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                                    className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-1000"
                                 />
                             </div>
                         </div>

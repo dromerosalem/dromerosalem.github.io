@@ -11,11 +11,15 @@ interface GlassCardProps {
     image?: string;
     images?: string[];
     isMobile?: boolean;
+    category: 'raw' | 'vibe';
+    challenge?: string;
+    solution?: string;
 }
 
-export const GlassCard = ({ title, description, tags, link, githubLink, image, images, isMobile }: GlassCardProps) => {
+export const GlassCard = ({ title, description, tags, link, githubLink, image, images, isMobile, category, challenge, solution }: GlassCardProps) => {
     const ref = useRef<HTMLDivElement>(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isExpanded, setIsExpanded] = useState(false);
     const displayImages = images || (image ? [image] : []);
 
     useEffect(() => {
@@ -81,13 +85,41 @@ export const GlassCard = ({ title, description, tags, link, githubLink, image, i
         >
             <motion.div
                 style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }}
-                className="glass-panel p-6 flex flex-col gap-4 group h-full relative overflow-hidden bg-gradient-to-br from-white/10 to-white/0"
+                className={`glass-panel p-6 flex flex-col gap-4 group h-full relative overflow-hidden transition-all duration-500 ${category === 'vibe'
+                        ? 'border-gold-accent/10 hover:border-gold-accent/30 bg-gradient-to-br from-gold-accent/5 to-transparent'
+                        : 'border-white/10 hover:border-white/20 bg-gradient-to-br from-white/5 to-transparent'
+                    }`}
             >
+                {/* Visual Category Differentiation Layer */}
+                {category === 'vibe' ? (
+                    <>
+                        {/* Vibe: AI Pulse Glow */}
+                        <motion.div
+                            animate={{ opacity: [0.1, 0.3, 0.1] }}
+                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute -top-20 -right-20 w-64 h-64 bg-gold-accent/10 rounded-full blur-[80px] pointer-events-none"
+                        />
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(180,148,90,0.05),transparent_70%)] pointer-events-none" />
+                    </>
+                ) : (
+                    <>
+                        {/* Raw: Engineering Grid Overlay */}
+                        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                            style={{ backgroundImage: `radial-gradient(circle, #fff 1px, transparent 1px)`, backgroundSize: '24px 24px' }}
+                        />
+                        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+                    </>
+                )}
+
                 {/* Shine effect */}
-                <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1),transparent_50%)]" />
+                <div className={`absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none ${category === 'vibe'
+                    ? 'bg-[radial-gradient(circle_at_50%_0%,rgba(180,148,90,0.15),transparent_50%)]'
+                    : 'bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1),transparent_50%)]'
+                    }`} />
 
                 <div className="flex justify-between items-start z-10" style={{ transform: "translateZ(50px)" }}>
-                    <h3 className="text-xl font-bold text-white group-hover:text-gold-accent transition-colors duration-500">
+                    <h3 className={`text-xl font-bold transition-colors duration-500 ${category === 'vibe' ? 'text-white group-hover:text-gold-accent' : 'text-zinc-200 group-hover:text-white'
+                        }`}>
                         {title}
                     </h3>
                     <div className="flex gap-2">
@@ -192,9 +224,57 @@ export const GlassCard = ({ title, description, tags, link, githubLink, image, i
                     </div>
                 )}
 
+                {/* Technical Breakdown Expansion */}
+                {(challenge || solution) && (
+                    <div className="z-10 mt-auto" style={{ transform: "translateZ(20px)" }}>
+                        <button
+                            onClick={(e) => { e.stopPropagation(); setIsExpanded(!isExpanded); }}
+                            className={`w-full flex items-center justify-between py-2 text-[10px] uppercase tracking-widest font-bold transition-all ${category === 'vibe' ? 'text-gold-accent/60 hover:text-gold-accent' : 'text-zinc-500 hover:text-white'
+                                }`}
+                        >
+                            <span>Technical Breakdown</span>
+                            <motion.span
+                                animate={{ rotate: isExpanded ? 180 : 0 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <ChevronRight size={14} className="rotate-90" />
+                            </motion.span>
+                        </button>
+
+                        <AnimatePresence>
+                            {isExpanded && (
+                                <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    className="overflow-hidden"
+                                >
+                                    <div className={`mt-2 p-4 rounded-lg text-xs leading-relaxed space-y-3 ${category === 'vibe' ? 'bg-gold-accent/5 border border-gold-accent/10' : 'bg-white/5 border border-white/10'
+                                        }`}>
+                                        {challenge && (
+                                            <div>
+                                                <span className={`${category === 'vibe' ? 'text-gold-accent' : 'text-white'} font-bold block mb-1 uppercase tracking-tighter opacity-70`}>Challenge</span>
+                                                <p className="text-zinc-400">{challenge}</p>
+                                            </div>
+                                        )}
+                                        {solution && (
+                                            <div>
+                                                <span className={`${category === 'vibe' ? 'text-gold-accent' : 'text-white'} font-bold block mb-1 uppercase tracking-tighter opacity-70`}>Solution</span>
+                                                <p className="text-zinc-400">{solution}</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                )}
+
                 <div className="flex flex-wrap gap-2 pt-2 border-t border-white/5 z-10" style={{ transform: "translateZ(20px)" }}>
                     {tags.map((tag) => (
-                        <span key={tag} className="text-xs font-mono text-zinc-500 bg-white/5 px-2 py-1 rounded">
+                        <span key={tag} className={`text-xs font-mono transition-colors duration-300 px-2 py-1 rounded ${category === 'vibe' ? 'text-gold-accent/70 bg-gold-accent/5' : 'text-zinc-500 bg-white/5'
+                            }`}>
                             {tag}
                         </span>
                     ))}
