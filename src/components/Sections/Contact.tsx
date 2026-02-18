@@ -15,10 +15,7 @@ export const Contact = () => {
     return (
         <section id="contact" className="py-24 relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-4 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                <div
                     className="z-10 relative"
                 >
                     <h2 className="text-gold-accent text-xs font-bold uppercase tracking-[0.4em] mb-4">Project Inquiry</h2>
@@ -95,7 +92,7 @@ export const Contact = () => {
                         <p className="text-zinc-500 text-[10px] uppercase tracking-[0.3em]">Based in London • Available Worldwide</p>
                         <div className="w-1 h-1 rounded-full bg-gold-accent animate-pulse" />
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

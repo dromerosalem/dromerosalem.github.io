@@ -6,6 +6,8 @@ import { ProjectSplitter } from './components/Sections/ProjectSplitter';
 import { ProjectGrid } from './components/Sections/ProjectGrid';
 import { About } from './components/Sections/About';
 import { Contact } from './components/Sections/Contact';
+import { ScrollProgress } from './components/UI/ScrollProgress';
+import { ScrollReveal } from './components/UI/ScrollReveal';
 import { type ProjectCategory } from './data/projects';
 
 function App() {
@@ -13,22 +15,30 @@ function App() {
 
   return (
     <main className="min-h-screen relative text-white selection:bg-white selection:text-black">
+      <ScrollProgress />
       <Background />
       <Navbar />
 
       <div className="container mx-auto">
-        <Hero />
+        <ScrollReveal>
+          <Hero />
+        </ScrollReveal>
 
-        <section id="projects" className="py-20">
+        <ScrollReveal id="projects" className="py-20">
           <ProjectSplitter
             activeCategory={activeCategory}
             setActiveCategory={setActiveCategory}
           />
           <ProjectGrid activeCategory={activeCategory} />
-        </section>
+        </ScrollReveal>
 
-        <About />
-        <Contact />
+        <ScrollReveal>
+          <About />
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <Contact />
+        </ScrollReveal>
       </div>
     </main>
   );

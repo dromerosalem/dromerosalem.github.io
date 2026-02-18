@@ -22,11 +22,7 @@ export const About = () => {
         <section id="about" className="py-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-16 items-start">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                    >
+                    <div>
                         <h2 className="text-4xl md:text-5xl font-bold mb-8 gold-gradient-text tracking-tighter uppercase font-sans">About Me</h2>
                         <div className="space-y-6 text-zinc-400 leading-relaxed text-lg mb-12">
                             <p className="text-white font-medium">
@@ -64,14 +60,9 @@ export const About = () => {
                                 </div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="relative space-y-8"
-                    >
+                    <div className="relative space-y-8">
                         <div className="relative">
                             <div className="absolute -inset-4 bg-gold-accent/5 rounded-3xl blur-3xl opacity-50" />
                             <div className="relative aspect-square md:aspect-auto md:h-[450px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 shadow-2xl">
@@ -83,23 +74,9 @@ export const About = () => {
                             </div>
                         </div>
 
-                        {/* Experience Highlights */}
-                        <div className="grid md:grid-cols-2 gap-4">
-                            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                                <span className="text-gold-accent font-bold block text-sm mb-1 uppercase tracking-wider">Education</span>
-                                <p className="text-white text-xs opacity-80">Bsc Computing & IT and Design @ The Open University</p>
-                                <p className="text-white text-xs opacity-80">Software Engineering Immersive @ General Assembly</p>
-                            </div>
-                            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                                <span className="text-gold-accent font-bold block text-sm mb-1 uppercase tracking-wider">Top Experience</span>
-                                <p className="text-white text-xs opacity-80">Onboarding Associate @ Citibank </p>
-                                <p className="text-white text-xs opacity-80">2nd Level IT Support @ Diebold Nixdorf</p>
-                            </div>
-                        </div>
-
                         {/* Technical Snippet */}
                         <CodeWindow />
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>
