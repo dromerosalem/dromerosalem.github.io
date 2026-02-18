@@ -5,6 +5,7 @@ import { Hero } from './components/Sections/Hero';
 import { ProjectSplitter } from './components/Sections/ProjectSplitter';
 import { ProjectGrid } from './components/Sections/ProjectGrid';
 import { About } from './components/Sections/About';
+import { Contact } from './components/Sections/Contact';
 import { type ProjectCategory } from './data/projects';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         </section>
 
         <About />
+        <Contact />
       </div>
     </main>
   );

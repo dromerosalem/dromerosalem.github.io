@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import profilePic from '../../assets/me.png';
+import { CodeWindow } from '../UI/CodeWindow';
 
 export const About = () => {
     const skillCategories = [
@@ -20,7 +21,7 @@ export const About = () => {
     return (
         <section id="about" className="py-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -69,30 +70,35 @@ export const About = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="relative"
+                        className="relative space-y-8"
                     >
-                        <div className="absolute -inset-4 bg-gold-accent/5 rounded-3xl blur-3xl" />
-                        <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 shadow-2xl">
-                            <img
-                                src={profilePic}
-                                alt="David Romero Salem"
-                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-                            />
+                        <div className="relative">
+                            <div className="absolute -inset-4 bg-gold-accent/5 rounded-3xl blur-3xl opacity-50" />
+                            <div className="relative aspect-square md:aspect-auto md:h-[400px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 shadow-2xl">
+                                <img
+                                    src={profilePic}
+                                    alt="David Romero Salem"
+                                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                                />
+                            </div>
                         </div>
 
                         {/* Experience Highlights */}
-                        <div className="mt-8 space-y-4">
+                        <div className="grid md:grid-cols-2 gap-4">
                             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                                 <span className="text-gold-accent font-bold block text-sm mb-1 uppercase tracking-wider">Education</span>
-                                <p className="text-white text-sm">Bsc Computing & IT and Design @ The Open University</p>
-                                <p className="text-white text-sm">Software Engineering Immersive @ General Assembly</p>
+                                <p className="text-white text-xs opacity-80">Bsc Computing & IT and Design @ The Open University</p>
+                                <p className="text-white text-xs opacity-80">Software Engineering Immersive @ General Assembly</p>
                             </div>
                             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                                 <span className="text-gold-accent font-bold block text-sm mb-1 uppercase tracking-wider">Top Experience</span>
-                                <p className="text-white text-sm">Corporate Client Onboarding Associate @ Citibank Europe</p>
-                                <p className="text-white text-sm">2nd Level IT Support @ Diebold Nixdorf</p>
+                                <p className="text-white text-xs opacity-80">Onboarding Associate @ Citibank </p>
+                                <p className="text-white text-xs opacity-80">2nd Level IT Support @ Diebold Nixdorf</p>
                             </div>
                         </div>
+
+                        {/* Technical Snippet */}
+                        <CodeWindow />
                     </motion.div>
                 </div>
             </div>

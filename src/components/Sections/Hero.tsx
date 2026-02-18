@@ -37,15 +37,15 @@ export const Hero = () => {
                         whileTap={{ scale: 0.95 }}
                         className="glass-button-primary w-full sm:w-auto"
                     >
-                        View Projects
+                        Explore Ecosystem
                     </motion.a>
                     <motion.a
-                        href="mailto:davidromerosalem@gmail.com"
+                        href="#contact"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="glass-button w-full sm:w-auto"
                     >
-                        Get in Touch
+                        Let's Connect
                     </motion.a>
                 </div>
             </motion.div>
