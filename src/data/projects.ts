@@ -3,8 +3,11 @@ import spacexHero from '../assets/space-x.png';
 import triviaHero from '../assets/trivia1.png';
 import spacezHero from '../assets/space-z.png';
 import wondersHero from '../assets/wonders-hero.png';
-import nomadsyncHero from '../assets/nomadsync-hero.png';
-import killbillHero from '../assets/killbill-hero.png';
+import nomadsync1 from '../assets/nomadsync-1.png';
+import nomadsync2 from '../assets/nomadsync-2.png';
+import nomadsync3 from '../assets/nomadsync-3.png';
+import killbill1 from '../assets/killbill-1.png';
+import killbill2 from '../assets/killbill-2.png';
 import hipotecaHero from '../assets/hipoteca-hero.png';
 
 export type ProjectCategory = 'raw' | 'vibe';
@@ -17,7 +20,9 @@ export interface Project {
     link?: string;
     githubLink?: string;
     image?: string;
+    images?: string[];
     category: ProjectCategory;
+    isMobile?: boolean;
 }
 
 export const projects: Project[] = [
@@ -68,8 +73,9 @@ export const projects: Project[] = [
         tags: ['Ionic', 'Supabase', 'React', 'Google Gemini', 'PWA', 'Leaflet'],
         link: 'https://www.nomadsync.co',
         githubLink: 'https://github.com/dromerosalem/NomadSync',
-        image: nomadsyncHero,
-        category: 'vibe'
+        images: [nomadsync1, nomadsync2, nomadsync3],
+        category: 'vibe',
+        isMobile: true
     },
     {
         id: 'kill-bill',
@@ -78,8 +84,9 @@ export const projects: Project[] = [
         tags: ['Ionic', 'React', 'Google GenAI', 'Vite', 'Tailwind'],
         link: 'https://kill-bill-wheat.vercel.app/',
         githubLink: 'https://github.com/dromerosalem/Kill-Bill',
-        image: killbillHero,
-        category: 'vibe'
+        images: [killbill1, killbill2],
+        category: 'vibe',
+        isMobile: true
     },
     {
         id: 'wonders',
