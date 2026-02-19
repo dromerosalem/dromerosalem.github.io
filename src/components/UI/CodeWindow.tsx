@@ -48,21 +48,29 @@ export const CodeWindow = () => {
                     <div className="text-gold-accent text-4xl">{"{ }"}</div>
                 </div>
 
-                <pre className="text-zinc-400">
+                <pre className="text-zinc-400 whitespace-pre-wrap break-words">
                     {codeSnippet.split('\n').map((line, i) => {
-                        // Very basic syntax highlighting replacements
-                        let highlightedLine = line
-                            .replace(/(class|async|await|const|return|export|default|new)/g, '<span class="text-purple-400">$1</span>')
-                            .replace(/(Orchestrator|ResilientArchitecture)/g, '<span class="text-yellow-200">$1</span>')
-                            .replace(/('.*?'|".*?")/g, '<span class="text-green-400">$1</span>')
-                            .replace(/(\/\/ .*|\/\*\*[\s\S]*?\*\/)/g, '<span class="text-zinc-600 italic">$1</span>')
-                            .replace(/(static|private|public)/g, '<span class="text-blue-400">$1</span>')
-                            .replace(/(@\w+)/g, '<span class="text-gold-accent/70">$1</span>');
+                        let highlightedLine = line;
+
+                        // 1. Highlight comments
+                        highlightedLine = highlightedLine.replace(/(\/\/.*|\/\*\*[\s\S]*?\*\/)/g, '<span class="text-zinc-600 italic">$1</span>');
+
+                        // 2. Highlight strings - only if not already in a tag
+                        highlightedLine = highlightedLine.replace(/(?<!=)(['"].*?['"])/g, '<span class="text-green-400">$1</span>');
+
+                        // 3. Highlight keywords - skip if part of a tag attribute (like class=)
+                        highlightedLine = highlightedLine.replace(/\b(class|async|await|const|return|export|default|new|static|private|public)\b(?!=)/g, '<span class="text-purple-400">$1</span>');
+
+                        // 4. Highlight Types/Classes
+                        highlightedLine = highlightedLine.replace(/\b(Orchestrator|ResilientArchitecture)\b(?!=)/g, '<span class="text-yellow-200">$1</span>');
+
+                        // 5. Highlight annotations
+                        highlightedLine = highlightedLine.replace(/(@\w+)/g, '<span class="text-gold-accent/70">$1</span>');
 
                         return (
                             <div key={i} className="flex gap-4">
-                                <span className="text-zinc-700 w-4 text-right select-none">{i + 1}</span>
-                                <span dangerouslySetInnerHTML={{ __html: highlightedLine }} />
+                                <span className="text-zinc-700 w-6 text-right select-none flex-shrink-0 font-mono text-[10px] md:text-xs pt-1">{i + 1}</span>
+                                <span className="flex-1 font-mono text-[11px] md:text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: highlightedLine }} />
                             </div>
                         );
                     })}
